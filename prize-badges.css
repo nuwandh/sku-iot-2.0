@@ -1,0 +1,170 @@
+/* =========================================
+   PRIZE SECTION - Asymmetric Badge Design
+   ========================================= */
+
+/* Badge Styling - Real-World Touch */
+.prize-badge {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="light"] .prize-badge {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0%, rgba(0, 0, 0, 0.01) 100%);
+    border-color: rgba(0, 0, 0, 0.1);
+}
+
+.badge-rank {
+    font-size: 3rem;
+    font-weight: 900;
+    line-height: 1;
+    font-family: var(--font-sans);
+}
+
+.badge-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+/* Gold Badge */
+.gold-badge {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    border-color: #b8860b;
+    color: #1a1a1a;
+    transform: scale(1.05);
+}
+
+.gold-badge .badge-rank {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="light"] .gold-badge {
+    background: linear-gradient(135deg, #ffc107 0%, #ffeb3b 100%);
+    border-color: #f57f17;
+    color: #000;
+}
+
+/* Silver Badge */
+.silver-badge {
+    background: linear-gradient(135deg, #c0c0c0 0%, #e8e8e8 100%);
+    border-color: #808080;
+    color: #1a1a1a;
+}
+
+.silver-badge .badge-rank {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .silver-badge {
+    background: linear-gradient(135deg, #9e9e9e 0%, #bdbdbd 100%);
+    border-color: #616161;
+    color: #000;
+}
+
+/* Bronze Badge */
+.bronze-badge {
+    background: linear-gradient(135deg, #cd7f32 0%, #e9a970 100%);
+    border-color: #8b4513;
+    color: #1a1a1a;
+}
+
+.bronze-badge .badge-rank {
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="light"] .bronze-badge {
+    background: linear-gradient(135deg, #a1887f 0%, #bcaaa4 100%);
+    border-color: #5d4037;
+    color: #000;
+}
+
+/* Asymmetric Card Sizing - Option 4 */
+.prize-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .prize-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* 1st Place - Larger and Centered */
+.rank-1-card {
+    grid-column: 2;
+    transform: scale(1.08) translateY(-10px);
+    z-index: 2;
+}
+
+/* 2nd Place - Slight left rotation */
+.rank-2-card {
+    grid-column: 1;
+    grid-row: 1;
+    transform: rotate(-0.8deg);
+}
+
+/* 3rd Place - Slight right rotation */
+.rank-3-card {
+    grid-column: 3;
+    grid-row: 1;
+    transform: rotate(0.8deg);
+}
+
+/* On mobile, remove rotations and scaling */
+@media (max-width: 768px) {
+
+    .rank-1-card,
+    .rank-2-card,
+    .rank-3-card {
+        transform: none !important;
+        grid-column: 1;
+    }
+}
+
+/* Prize Card Base Styling */
+.prize-card-new {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prize-card-new:hover {
+    transform: translateY(-5px) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Make 1st place hover more prominent */
+.rank-1-card:hover {
+    transform: scale(1.1) translateY(-15px) !important;
+}
+
+/* Remove the old icon circle if it exists */
+.prize-icon-circle {
+    display: none;
+}
+
+.prize-badge-img {
+    width: 140px;
+    height: auto;
+    margin: 0 auto 1.5rem;
+    display: block;
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.prize-badge-img:hover {
+    transform: scale(1.05);
+}
