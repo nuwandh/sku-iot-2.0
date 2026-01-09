@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKU IoT '25 Challenge - Innovation Starts Here</title>
+    <meta name="description"
+        content="Registration Open Now for SKU IoT '25 Challenge. Join the ultimate technology competition for schools and universities.">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Background System -->
+    <div id="canvas-container">
+        <canvas id="magnetic-grid"></canvas>
+        <div class="mesh-gradient">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+            <div class="blob blob-3"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div id="scroll-progress" class="scroll-progress"></div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <a href="#home" class="logo-link">
+                <!-- Image Wrapper -->
+                <div class="logo-image-wrapper">
+                    <img src="Resources/logo.jpg" alt="SKU IoT Logo" class="logo-img" />
+                </div>
+
+                <!-- Text Container -->
+                <div class="logo-text-container">
+                    <div class="logo-title">SKU IoT'25</div>
+                    <div class="logo-subtitle">Challenge</div>
+                </div>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#categories" class="nav-link">Categories</a>
+                <a href="#timeline" class="nav-link">Timeline</a>
+                <a href="#prizes" class="nav-link">Prizes</a>
+                <a href="#register" class="nav-link">Register</a>
+            </nav>
+
+            <div class="header-actions">
+                <button id="theme-toggle" class="btn-icon" aria-label="Toggle Theme">
+                    <svg class="icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <a href="#register" class="btn btn-primary btn-sm desk-only">Register Now</a>
+                <button id="menu-toggle" class="btn-icon mobile-only" aria-label="Menu">
+                    <svg class="icon menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-header">
+            <span class="mobile-menu-title">Menu</span>
+            <button id="menu-close" class="btn-icon" aria-label="Close Menu">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <nav class="mobile-nav">
+            <a href="#home" class="mobile-nav-link">Home</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#categories" class="mobile-nav-link">Categories</a>
+            <a href="#timeline" class="mobile-nav-link">Timeline</a>
+            <a href="#prizes" class="mobile-nav-link">Prizes</a>
+            <a href="#register" class="mobile-nav-link">Register</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section">
+            <div class="hero-bg-grid"></div>
+            <div class="hero-bg-glow"></div>
+            <div class="container hero-container">
+                <div class="hero-content animate-stagger">
+                    <h1 class="hero-title animate-item">
+                        SKU IoT <span class="text-gradient-hero">'25</span> Challenge
+                    </h1>
+                    <p class="hero-description animate-item">
+                        Professional university-grade IoT competition featuring multi-level challenges.
+                        Showcase your innovative solutions, compete with the best, and win exciting cash prizes.
+                    </p>
+                    <div class="hero-actions animate-item">
+                        <a href="#register" class="btn btn-primary-hero btn-lg">Register Your Team</a>
+                        <a href="#about" class="btn btn-outline-hero btn-lg">Learn More</a>
+                    </div>
+                </div>
+
+                <div class="hero-stats animate-stagger-delay">
+                    <!-- Date -->
+                    <div class="stat-card">
+                        <div class="stat-icon-wrapper icon-blue">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                        </div>
+                        <span class="stat-value">March 2026</span>
+                        <span class="stat-label">Competition Date</span>
+                    </div>
+
+                    <!-- Members -->
+                    <div class="stat-card">
+                        <div class="stat-icon-wrapper icon-orange">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <span class="stat-value">3-4 Members</span>
+                        <span class="stat-label">Per Team</span>
+                    </div>
+
+                    <!-- Prize -->
+                    <div class="stat-card">
+                        <div class="stat-icon-wrapper icon-blue">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path>
+                                <path d="M18 9h1.5a2.5 2.5 0 0 1 0-5H18"></path>
+                                <path d="M4 22h16"></path>
+                                <path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path>
+                                <path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path>
+                                <path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path>
+                            </svg>
+                        </div>
+                        <span class="stat-value">LKR 100K+</span>
+                        <span class="stat-label">Prize Pool</span>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="stat-card">
+                        <div class="stat-icon-wrapper icon-orange">
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                            </svg>
+                        </div>
+                        <span class="stat-value">2 Categories</span>
+                        <span class="stat-label">School & University</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header scroll-animate">
+                    <span class="badge badge-outline mb-4">About the Challenge</span>
+                    <h2 class="section-title">Empowering the Next Generation of <span class="text-highlight-blue">IoT
+                            Innovators</span></h2>
+                    <p class="section-subtitle">
+                        The SLIIT Kandy IoT'25 Challenge is a prestigious competition designed to identify and nurture
+                        talented individuals in the Internet of Things domain. Our competition provides a platform for
+                        students to demonstrate their technical expertise and innovative thinking.
+                    </p>
+                </div>
+                <div class="about-grid mb-12">
+                    <!-- 1. Innovation Focus -->
+                    <div class="card about-card scroll-animate delay-100">
+                        <div class="card-icon-wrapper">
+                            <!-- Icon: Target -->
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <circle cx="12" cy="12" r="6"></circle>
+                                <circle cx="12" cy="12" r="2"></circle>
+                            </svg>
+                        </div>
+                        <h3>Innovation Focus</h3>
+                        <p>Develop cutting-edge IoT solutions that address real-world problems.</p>
+                    </div>
+
+                    <!-- 2. Creative Solutions -->
+                    <div class="card about-card scroll-animate delay-200">
+                        <div class="card-icon-wrapper">
+                            <!-- Icon: Lightbulb -->
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M9 18h6"></path>
+                                <path d="M10 22h4"></path>
+                                <path
+                                    d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7z">
+                                </path>
+                            </svg>
+                        </div>
+                        <h3>Creative Solutions</h3>
+                        <p>Showcase your creativity and engineering skills in a competitive environment.</p>
+                    </div>
+
+                    <!-- 3. Team Collaboration -->
+                    <div class="card about-card scroll-animate delay-300">
+                        <div class="card-icon-wrapper">
+                            <!-- Icon: Users -->
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h3>Team Collaboration</h3>
+                        <p>Work in teams of 3-4 members to build comprehensive solutions.</p>
+                    </div>
+
+                    <!-- 4. Recognition -->
+                    <div class="card about-card scroll-animate delay-400">
+                        <div class="card-icon-wrapper">
+                            <!-- Icon: Award -->
+                            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+                            </svg>
+                        </div>
+                        <h3>Recognition</h3>
+                        <p>Gain recognition for your work from industry leaders and academic experts.</p>
+                    </div>
+                </div>
+
+                <!-- Objectives Footer -->
+                <div class="objectives-box scroll-animate delay-400">
+                    <h3 class="objectives-title">Challenge Objectives</h3>
+                    <p class="objectives-text">Our goal is to foster innovation in IoT technology and empower students
+                        to create impactful solutions.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="section bg-muted-50">
+            <div class="container">
+                <div class="section-header scroll-animate">
+                    <span class="badge badge-outline mb-4">Competition Categories</span>
+                    <h2 class="section-title">Choose Your <span style="color: var(--cat-primary)">Challenge Level</span>
+                    </h2>
+                    <p class="section-subtitle">Select the category that matches your education level and showcase your
+                        innovation.</p>
+                </div>
+
+                <div class="categories-grid categories-gap">
+                    <!-- School Category -->
+                    <div class="card category-card scroll-animate">
+                        <div class="category-content">
+                            <div class="cat-header">
+                                <div class="cat-icon-box">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20"></path>
+                                    </svg>
+                                </div>
+                                <span class="badge badge-prize">LKR 75,000</span>
+                            </div>
+                            <h3 class="cat-title">School Category</h3>
+                            <p class="cat-subtitle">Grades 10-13 · Young Innovators</p>
+
+                            <div class="cat-lists">
+                                <div>
+                                    <h4 class="cat-list-title">Key Features</h4>
+                                    <ul class="cat-list">
+                                        <li>
+                                            <div class="bullet bullet-primary"></div>Creative Concept Focus
+                                        </li>
+                                        <li>
+                                            <div class="bullet bullet-primary"></div>Mentorship Sessions
+                                        </li>
+                                        <li>
+                                            <div class="bullet bullet-primary"></div>Beginner Friendly
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="cat-list-title">Requirements</h4>
+                                    <ul class="cat-list">
+                                        <li>
+                                            <div class="bullet bullet-secondary"></div>Valid Student ID
+                                        </li>
+                                        <li>
+                                            <div class="bullet bullet-secondary"></div>Team of 3-4 Members
+                                        </li>
+                                        <li>
+                                            <div class="bullet bullet-secondary"></div>Teacher Supervisor
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <a href="#register" class="btn btn-primary btn-block btn-lg">Register School Team</a>
+                        </div>
+                    </div>
+
+                    <!-- University Category -->
+                    <div class="card category-card scroll-animate delay-200">
+                        <div class="category-content">
+                            <div class="cat-header">
+                                <div class="cat-icon-box">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                                        <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                                    </svg>
+                                </div>
+                                <span class="badge badge-prize">LKR 100,000</span>
+                            </div>
+                            <h3 class="cat-title">University Category</h3>
+                            <p class="cat-subtitle">Undergraduates · Tech Pros</p>
+
+
+
+
+                            <div class="cat-lists">
+                                <div>
+                                    <h4 class="cat-list-title">Key Features</h4>
+                                    <ul class="cat-list">
+                                        <li>
+                                            <div class="bullet bullet-primary"></div>Technical Implementation
+                                        </li>
+                                        <li>
+                                            <div class="bullet bullet-primary"></div>Industry Networking
+                                        </li>
+                                        <li>
+                                            <div class="bullet bullet-primary"></div>Startup Opportunities
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h4 class="cat-list-title">Requirements</h4>
+                                    <ul class="cat-list">
+                                        <li>
+                                            <div class="bullet bullet-secondary"></div>Valid University ID
+                                        </li>
+                                        <li>
+                                            <div class="bullet bullet-secondary"></div>Team of 3-4 Members
+                                        </li>
+                                        <li>
+                                            <div class="bullet bullet-secondary"></div>Working Prototype
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <a href="#register" class="btn btn-primary btn-block btn-lg">Register Uni Team</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Deadline Box -->
+                <!-- Deadline Box -->
+                <div class="deadline-box scroll-animate delay-400">
+                    <svg class="deadline-icon icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <div class="deadline-text">
+                        <h4>Registration Deadline</h4>
+                        <p>Make sure to register your team before the deadline. Late registrations will not be accepted.
+                        </p>
+                    </div>
+                    <span class="badge badge-deadline">Deadline: February 28, 2025</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Timeline Section -->
+        <section id="timeline" class="section">
+            <div class="container">
+                <div class="section-header scroll-animate">
+                    <h2 class="section-title">Event Timeline</h2>
+                    <p class="section-subtitle">Mark your calendars for these important dates.</p>
+                </div>
+
+                <div class="timeline-wrapper">
+                    <!-- SVG Vertical Track -->
+                    <svg class="timeline-svg" preserveAspectRatio="none">
+                        <line class="timeline-track" x1="25" y1="0" x2="25" y2="100%" stroke="#3b82f6"
+                            stroke-width="2" />
+                    </svg>
+
+                    <div class="timeline">
+                        <!-- Milestone 1: Registration Opens -->
+                        <div class="timeline-item scroll-animate" data-date="2026-01-01">
+                            <span class="status-tag"></span>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">Jan 01, 2026</span>
+                                <h3 class="timeline-title">Registration Opens</h3>
+                                <p>Online registration portal opens for all categories.</p>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 2: Info Session -->
+                        <div class="timeline-item scroll-animate" data-date="2026-02-15">
+                            <span class="status-tag"></span>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">Feb 15, 2026</span>
+                                <h3 class="timeline-title">Info Session</h3>
+                                <p>Online briefing on rules, categories, and Q&A.</p>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 3: Registration Closes -->
+                        <div class="timeline-item scroll-animate" data-date="2026-02-28">
+                            <span class="status-tag"></span>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">Feb 28, 2026</span>
+                                <h3 class="timeline-title">Registration Closes</h3>
+                                <p>Final date for team registration and submission.</p>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 4: Submission Deadline -->
+                        <div class="timeline-item scroll-animate" data-date="2026-03-15">
+                            <span class="status-tag"></span>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">Mar 15, 2026</span>
+                                <h3 class="timeline-title">Project Submission</h3>
+                                <p>Final project and documentation submission deadline.</p>
+                            </div>
+                        </div>
+
+                        <!-- Milestone 5: Grand Finale -->
+                        <div class="timeline-item scroll-animate" data-date="2026-03-30">
+                            <span class="status-tag"></span>
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <span class="timeline-date">Mar 30, 2026</span>
+                                <h3 class="timeline-title">Grand Finale</h3>
+                                <p>Final presentations and awards ceremony.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prizes Section -->
+        <section id="prizes" class="section bg-muted-50">
+            <div class="container">
+                <div class="section-header scroll-animate">
+                    <span class="badge badge-outline mb-4">Rewards & Recognition</span>
+                    <h2 class="section-title">Prize <span style="color: var(--cat-secondary)">Pool</span></h2>
+                    <p class="section-subtitle">Total prize pool exceeding LKR 130,000 for top innovators.</p>
+                </div>
+
+                <!-- School Category -->
+                <div class="prize-category-block scroll-animate">
+                    <div class="prize-cat-header text-center mb-8">
+                        <h3 class="prize-cat-title">School Category</h3>
+                        <p class="prize-cat-subtitle">Prizes for Grades 6-13</p>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="prize-grid">
+                        <!-- 2nd Place -->
+                        <div class="prize-card-new rank-2-card scroll-animate delay-100">
+                            <div class="prize-icon-circle">🥈</div>
+                            <h4 class="prize-pos-title">2nd Place</h4>
+                            <div class="prize-amount">LKR 15,000</div>
+                            <ul class="prize-list">
+                                <li>
+                                    <div class="prize-dot"></div>Silver Medal
+                                </li>
+                                <li>
+                                    <div class="prize-dot"></div>Certificate of Achievement
+                                </li>
+                                <li>
+                                    <div class="prize-dot"></div>Mentorship Opportunity
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 1st Place -->
+                        <div class="prize-card-new rank-1-card scroll-animate">
+                            <div class="prize-icon-circle">🏆</div>
+                            <h4 class="prize-pos-title">1st Place</h4>
+                            <div class="prize-amount">LKR 25,000</div>
+                            <ul class="prize-list">
+                                <li>
+                                    <div class="prize-dot"></div>Gold Medal + Trophy
+                                </li>
+                                <li>
+                                    <div class="prize-dot"></div>Certificate of Excellence
+                                </li>
+                                <li>
+                                    <div class="prize-dot"></div>Full Scholarship Opportunity
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 3rd Place -->
+                        <div class="prize-card-new rank-3-card scroll-animate delay-200">
+                            <div class="prize-icon-circle">🥉</div>
+                            <h4 class="prize-pos-title">3rd Place</h4>
+                            <div class="prize-amount">LKR 10,000</div>
+                            <ul class="prize-list">
+                                <li>
+                                    <div class="prize-dot"></div>Bronze Medal
+                                </li>
+                                <li>
+                                    <div class="prize-dot"></div>Certificate of Merit
+                                </li>
+                                <li>
+                                    <div class="prize-dot"></div>Goody Bag
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- University Category -->
+                <div class="prize-category-block scroll-animate">
+                    <div class="prize-cat-header text-center mb-8">
+                        <h3 class="prize-cat-title">University Category</h3>
+                        <p class="prize-cat-subtitle">Undergraduates · Tech Pros</p>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="prize-grid">
+                        <!-- 2nd Place -->
+                        <div class="prize-card-new rank-2-card scroll-animate delay-100">
+                            <div class="prize-icon-circle">🥈</div>
+                            <h4 class="prize-pos-title">2nd Place</h4>
+                            <div class="prize-amount">LKR 25,000</div>
+                            <ul class="prize-list">
+                                <li>
+                                    <div class="prize-dot"></div>Silver Medal
+                                </li>
+                                <li>
+                                    <div class="prize-dot"></div>Certificate of Achievement
+                                </li>
+                                <li>
+                                    <div class="prize-dot"></div>Internship Interview
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 1st Place -->
+                        <div class="prize-card-new rank-1-card scroll-animate">
+                            <div class="prize-icon-circle">🏆</div>
+                            <h4 class="prize-pos-title">1st Place</h4>
+                            <div class="prize-amount">LKR 40,000</div>
+                            <ul class="prize-list">
+                                <li>
+                                    <div class="prize-dot"></div>Gold Medal + Trophy
+                                </li>
+                                <li>
+                                    <div class="prize-dot"></div>Certificate of Excellence
+                                </li>
+                                <li>
+                                    <div class="prize-dot"></div>Incubation Support
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 3rd Place -->
+                        <div class="prize-card-new rank-3-card scroll-animate delay-200">
+                            <div class="prize-icon-circle">🥉</div>
+                            <h4 class="prize-pos-title">3rd Place</h4>
+                            <div class="prize-amount">LKR 15,000</div>
+                            <ul class="prize-list">
+                                <li>
+                                    <div class="prize-dot"></div>Bronze Medal
+                                </li>
+                                <li>
+                                    <div class="prize-dot"></div>Certificate of Merit
+                                </li>
+                                <li>
+                                    <div class="prize-dot"></div>Industry Access
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="register" class="section">
+            <div class="container register-container-split">
+
+                <!-- Left Column: Info & Context -->
+                <div class="register-left-col">
+                    <div class="sticky-wrapper">
+                        <div class="section-header text-left mb-8">
+                            <span class="badge badge-outline mb-4">Join the Challenge</span>
+                            <h2 class="section-title">Ready to <span class="text-highlight-blue">Innovate?</span></h2>
+                            <p class="section-subtitle">
+                                Secure your team's spot in the most prestigious IoT competition of the year.
+                            </p>
+                        </div>
+
+                        <div class="register-benefits">
+                            <div class="d-flex align-items-start mb-6">
+                                <div class="icon-box-sm mr-4">
+                                    <svg class="icon text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <polyline points="20 6 9 17 4 12"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-1">Free Registration</h4>
+                                    <p class="text-muted text-sm">No entry fee for any category. Opportunity open to
+                                        all.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start mb-6">
+                                <div class="icon-box-sm mr-4">
+                                    <svg class="icon text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"></circle>
+                                        <polyline points="12 6 12 12 16 14"></polyline>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-1">Deadline Approaching</h4>
+                                    <p class="text-muted text-sm">Registration closes on February 28, 2025.</p>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-start">
+                                <div class="icon-box-sm mr-4">
+                                    <svg class="icon text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path
+                                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                                        </path>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-1">Need Help?</h4>
+                                    <p class="text-muted text-sm">Contact us at <a href="mailto:iot2025@sliit.lk"
+                                            class="text-primary">iot2025@sliit.lk</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="register-right-col">
+                    <!-- Hidden Iframe for Form Submission -->
+                    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+                    <form id="google-form" class="registration-form"
+                        action="https://docs.google.com/forms/d/e/1FAIpQLSdDreM7oaT-S6sikv-9vQIFBcz0YKOF0idrJs4IkA74FHXfyQ/formResponse"
+                        method="POST" target="hidden_iframe">
+
+                        <!-- Hidden tokens for Google Forms -->
+                        <input type="hidden" name="fvv" value="1">
+                        <input type="hidden" name="fbzx" value="-6735419100725417604">
+                        <input type="hidden" name="pageHistory" value="0">
+                        <input type="hidden" name="partialResponse" value='[null,null,"-6735419100725417604"]'>
+
+                        <!-- Section 1: Team Information -->
+                        <div class="card form-section">
+                            <div class="form-header">
+                                <div class="header-icon-wrapper">
+                                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                </div>
+                                <h3>Team Information</h3>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group full-width">
+                                    <label for="entry.1928681021">Team Name <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <input type="text" id="entry.1928681021" name="entry.1928681021"
+                                            placeholder="Enter your team name" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group full-width">
+                                    <label for="entry.2126890954">Category <span class="required">*</span></label>
+                                    <div class="select-wrapper">
+                                        <select id="entry.2126890954" name="entry.2126890954" required>
+                                            <option value="" disabled selected>Select a category</option>
+                                            <option value="School Category (Grades 6-13)">School Category (Grades 6-13)
+                                            </option>
+                                            <option value="University Category (Undergraduate & Graduate)">University
+                                                Category
+                                                (Undergraduates)</option>
+                                        </select>
+                                        <svg class="select-icon icon" viewBox="0 0 24 24" fill="none"
+                                            stroke="currentColor" stroke-width="2">
+                                            <polyline points="6 9 12 15 18 9"></polyline>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                        <!-- Section 2: Team Leader -->
+                        <div class="card form-section" id="team-leader-section">
+                            <div class="form-header-badge">
+                                <span class="badge badge-primary">Team Leader</span>
+                            </div>
+
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="entry.1549534817">Full Name <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <input type="text" id="entry.1549534817" name="entry.1549534817"
+                                            placeholder="Enter full name" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="entry.1663784631">Email Address <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <input type="email" id="entry.1663784631" name="entry.1663784631"
+                                            placeholder="Enter email address" required>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="entry.1067551578">Student ID (Optional)</label>
+                                    <div class="input-wrapper">
+                                        <input type="text" id="entry.1067551578" name="entry.1067551578"
+                                            placeholder="Enter student ID">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="entry.890610311">Phone Number <span class="required">*</span></label>
+                                    <div class="input-wrapper">
+                                        <input type="tel" id="entry.890610311" name="entry.890610311"
+                                            placeholder="Enter phone number" required>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Additional Members Container -->
+                        <div id="members-container">
+                            <!-- Dynamic members will be added here -->
+                        </div>
+
+                        <!-- Moved Section Footer (Add Member) -->
+                        <div class="card form-section" style="border-style: dashed; background: transparent;">
+                            <div class="section-footer"
+                                style="border: none; margin-top: 0; padding-top: 0; width: 100%;">
+                                <div style="display: flex; flex-direction: column;">
+                                    <span class="member-count">Team Members (<span
+                                            id="member-count-display">1</span>/4)</span>
+                                    <span class="form-hint" style="color: var(--text-muted); margin-left: 0;">Min. 3
+                                        members required</span>
+                                </div>
+                                <button type="button" id="add-member-btn" class="btn btn-outline btn-sm">
+                                    <svg class="icon icon-sm" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2">
+                                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                                    </svg>
+                                    Add Member
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Terms & Submit -->
+                        <div class="form-actions">
+                            <div class="terms-checkbox">
+                                <label class="checkbox-container">
+                                    <input type="checkbox" name="entry.933861959"
+                                        value="I agree to the terms and condition of the SLIIT Kandy IoT'26 Challenge"
+                                        required>
+                                    <span class="checkmark"></span>
+                                    <span class="terms-text">I agree to the terms and conditions of the SLIIT Kandy
+                                        IoT'25
+                                        Challenge <span class="required">*</span></span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary btn-block btn-lg submit-btn">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    style="margin-right: 8px;">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                                Register Team
+                            </button>
+                        </div>
+
+                        <!-- Success Message (Hidden by default) -->
+                        <div id="form-success-message" class="form-success" style="display: none;">
+                            <div class="success-icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                            </div>
+                            <h3>Registration Successful!</h3>
+                            <p>Thank you for registering. We will contact you shortly with more details.</p>
+                            <button type="button" class="btn btn-outline mt-4"
+                                onclick="window.location.reload()">Register
+                                Another Team</button>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-grid">
+            <!-- Brand Column -->
+            <div class="footer-brand">
+                <a href="#home" class="logo-link mb-6">
+                    <div class="logo-image-wrapper">
+                        <img src="Resources/logo.jpg" alt="SKU IoT Logo" class="logo-img" />
+                    </div>
+                    <div class="logo-text-container">
+                        <div class="logo-title">SKU IoT'25</div>
+                        <div class="logo-subtitle">Challenge</div>
+                    </div>
+                </a>
+                <p class="footer-desc">
+                    Professional university-grade IoT competition featuring multi-level challenges for School &
+                    University students. Join us in showcasing innovative IoT solutions.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#about">About Challenge</a>
+                <a href="#categories">Categories</a>
+                <a href="#timeline">Timeline</a>
+                <a href="#prizes">Prizes</a>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-contact">
+                <h4>Contact</h4>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:iot2025@sliit.lk">iot2025@sliit.lk</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+94117544801">+94 11 754 4801</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>SLIIT Kandy Center</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <div class="container footer-bottom-flex">
+                <p>&copy; 2025 SLIIT Kandy. All rights reserved.</p>
+                <div class="footer-legal-links">
+                    <a href="#">Terms & Conditions</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="magnetic-grid.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
