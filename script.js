@@ -391,4 +391,91 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // --- 8. Sponsors Carousel ---
+    const carousel = document.querySelector('.sponsors-carousel');
+    if (carousel) {
+        const slides = carousel.querySelectorAll('.sponsor-slide');
+        const dots = carousel.querySelectorAll('.carousel-dot');
+        const prevBtn = carousel.querySelector('.carousel-control.prev');
+        const nextBtn = carousel.querySelector('.carousel-control.next');
+
+        let currentSlide = 0;
+        let autoPlayInterval;
+        const AUTO_PLAY_DELAY = 2000; // 2 seconds - fast auto-play
+
+
+
+        function showSlide(index) {
+            // Remove active from all
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            // Add active to current
+            if (slides[index]) {
+                slides[index].classList.add('active');
+            }
+            if (dots[index]) {
+                dots[index].classList.add('active');
+            }
+
+            currentSlide = index;
+        }
+
+        function nextSlide() {
+            let next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }
+
+        function prevSlide() {
+            let prev = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(prev);
+        }
+
+        function startAutoPlay() {
+            autoPlayInterval = setInterval(nextSlide, AUTO_PLAY_DELAY);
+        }
+
+        function stopAutoPlay() {
+            clearInterval(autoPlayInterval);
+        }
+
+        // Navigation dots click
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                stopAutoPlay();
+                startAutoPlay(); // Restart auto-play
+            });
+        });
+
+        // Prev/Next controls
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                prevSlide();
+                stopAutoPlay();
+                startAutoPlay();
+            });
+        }
+
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                nextSlide();
+                stopAutoPlay();
+                startAutoPlay();
+            });
+        }
+
+        // Pause on hover
+        carousel.addEventListener('mouseenter', stopAutoPlay);
+        carousel.addEventListener('mouseleave', startAutoPlay);
+
+        // Initialize first slide and start auto-play
+        showSlide(0); // Ensure first slide is visible
+        console.log('Sponsors carousel initialized with', slides.length, 'slides');
+        startAutoPlay();
+        console.log('Auto-play started with', AUTO_PLAY_DELAY / 1000, 'second delay');
+    }
+
+
 });
+
