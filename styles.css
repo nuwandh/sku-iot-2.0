@@ -569,16 +569,25 @@ label {
     /* hover:opacity-80 */
 }
 
+/* Image Wrapper */
+.logo-image-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* Image */
 .logo-img {
-    width: 40px;
-    /* width={40} */
-    height: 40px;
-    /* height={40} */
+    width: 50px;
+    /* Balanced size with text */
+    height: 50px;
+    /* Balanced size with text */
     border-radius: 8px;
     /* rounded-lg */
     object-fit: contain;
-    /* object-contain */
+    /* Show the entire logo without cropping */
+    object-position: center;
+    /* Center the visible portion */
     display: block;
     /* Removes default inline image spacing */
 }
@@ -586,21 +595,8 @@ label {
 /* Text Container */
 .logo-text-container {
     display: block;
-    /* hidden sm:block (Shown by default here) */
-    font-family: sans-serif;
-    /* Defaults to system fonts */
-}
-
-/* Responsive visibility for text container */
-/* We keep the original design's behavior: hidden on mobile, block on sm+ */
-.logo-text-container {
-    display: none;
-}
-
-@media (min-width: 640px) {
-    .logo-text-container {
-        display: block;
-    }
+    /* Always visible */
+    font-family: var(--font-sans);
 }
 
 /* Title Text ("SKU IoT'25") */
@@ -609,8 +605,8 @@ label {
     /* text-lg */
     font-weight: 700;
     /* font-bold */
-    color: var(--primary-color);
-    /* text-primary */
+    color: #3b82f6;
+    /* Blue color to match reference */
     line-height: 1.2;
 }
 
@@ -618,10 +614,10 @@ label {
 .logo-subtitle {
     font-size: 0.75rem;
     /* text-xs */
-    color: var(--muted-text-color);
-    /* text-muted-foreground */
-    margin-top: -4px;
-    /* -mt-1 */
+    color: #9ca3af;
+    /* Gray color to match reference */
+    margin-top: -2px;
+    /* Tighter spacing */
     line-height: 1;
 }
 
@@ -3139,7 +3135,9 @@ label {
     .committee-email {
         font-size: 0.85rem;
     }
-}/* =========================================
+}
+
+/* =========================================
    Navigation & Mobile Menu
    ========================================= */
 
